@@ -7,12 +7,11 @@ const WebcamCapture = () => {
   const webcamRef = React.useRef(null);
   const  [imgsrc, setImgsrc] = React.useState(null);
 
-
   const capture = React.useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
     setImgsrc(imageSrc);
   }, [webcamRef, setImgsrc]);
-
+  
   return (
     <>
       <Webcam
@@ -26,9 +25,7 @@ const WebcamCapture = () => {
           src={imgsrc}
         />
       )}
-
     </>
   );
 };
-
 export default WebcamCapture;
